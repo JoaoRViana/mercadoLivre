@@ -19,7 +19,11 @@ class ListItens extends Component {
               flex-wrap justify-center items-center p-1
               bg-slate-300 my-12 itemContainer"
               >
-                <img src={ e.thumbnail } alt={ e.title } className="w-40" />
+                <img
+                  src={ e.thumbnail }
+                  alt={ e.title }
+                  className={ e.notFound ? e.notFound : 'w-40' }
+                />
 
                 <h2
                   className="
@@ -29,7 +33,7 @@ class ListItens extends Component {
                 </h2>
                 <h2 className="itemTitle w-full">
                   R$
-                  {e.price}
+                  {(+e.price).toFixed(2)}
                 </h2>
               </div>
             </Link>

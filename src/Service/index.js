@@ -28,13 +28,42 @@ const getSearchCategories = async (category) => {
 const getSpecificItem = async (itemID) => {
   const api = await fetch(`https://api.mercadolibre.com/items/${itemID}`);
   const data = await api.json(api);
-  return data.results;
+  return data;
 };
 
 const itemNotFound = {
+  id: '',
   title: 'Item não encontrado',
   thumbnail: '../41ce1856-ce64-47eb-9cc9-d50c75ba936b.avif',
-  price: '???',
+  price: 0,
+  notFound: 'w-64',
+};
+
+const addItemLocalStorage = (item) => {
+  const itens = JSON.parse(localStorage.getItem('cartProducts')) || [];
+  const contain = itens.some((e) => (e.id === item.id));
+  let index = itens.map((e, i) => (e.id === item.id ? i : false));
+  index = index.filter((e) => (e !== false));
+  if (contain) {
+    itens[index].quantity += 1;
+  } else {
+    item.quantity = 1;
+    itens.push(item);
+  }
+  localStorage.setItem('cartProducts', JSON.stringify(itens));
+};
+
+const removeItemLocalStorage = (item) => {
+  const itens = JSON.parse(localStorage.getItem('cartProducts')) || [];
+  let index = itens.map((e, i) => (e.id === item.id ? i : false));
+  index = index.filter((e) => (e !== false));
+  itens[index[0]].quantity -= 1;
+  let newItens = itens;
+  if (itens[index].quantity < 1 || !itens[index].quantity) {
+    console.log('a');
+    newItens = itens.filter((e) => (e.id !== item.id));
+  }
+  localStorage.setItem('cartProducts', JSON.stringify(newItens));
 };
 
 module.exports = {
@@ -43,4 +72,6 @@ module.exports = {
   getSpecificItem,
   getSearchCategories,
   itemNotFound,
+  addItemLocalStorage,
+  removeItemLocalStorage,
 };
