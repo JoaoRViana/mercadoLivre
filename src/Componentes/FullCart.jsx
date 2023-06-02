@@ -12,7 +12,6 @@ class FullCart extends Component {
 
   render() {
     const { server } = this.props;
-    console.log(server);
     return (
       <div>
         {server.cartItens.map((e) => (
@@ -24,12 +23,11 @@ class FullCart extends Component {
             <button
               onClick={ () => {
                 const { dispatch } = this.props;
-                addItemLocalStorage(e);
+                addItemLocalStorage(e, false);
                 dispatch(attCart());
               } }
             >
               +
-
             </button>
             <button
               onClick={ () => {
@@ -40,9 +38,13 @@ class FullCart extends Component {
             >
               -
             </button>
-
           </div>
         ))}
+        <h2>
+          Total
+          {' '}
+          {(+server.total).toFixed(2)}
+        </h2>
       </div>
     );
   }

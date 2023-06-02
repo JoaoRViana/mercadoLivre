@@ -39,14 +39,14 @@ const itemNotFound = {
   notFound: 'w-64',
 };
 
-const addItemLocalStorage = (item) => {
+const addItemLocalStorage = (item, inCardDetail) => {
   const itens = JSON.parse(localStorage.getItem('cartProducts')) || [];
   const contain = itens.some((e) => (e.id === item.id));
   let index = itens.map((e, i) => (e.id === item.id ? i : false));
   index = index.filter((e) => (e !== false));
-  if (contain) {
+  if (contain && !inCardDetail) {
     itens[index].quantity += 1;
-  } else {
+  } else if (inCardDetail && !contain) {
     item.quantity = 1;
     itens.push(item);
   }

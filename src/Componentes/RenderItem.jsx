@@ -7,7 +7,7 @@ import { attCart } from '../redux/actions/server';
 class RenderItem extends Component {
   addProduct = () => {
     const { item, dispatch } = this.props;
-    addItemLocalStorage(item);
+    addItemLocalStorage(item, true);
     dispatch(attCart());
   };
 

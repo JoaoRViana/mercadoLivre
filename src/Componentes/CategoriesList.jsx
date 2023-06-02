@@ -15,7 +15,6 @@ class CategoriesList extends Component {
 
   render() {
     const { server } = this.props;
-    console.log(server);
     return (
       <div className="categorieList bg-gray-300 w-72 text-center">
         Categorias

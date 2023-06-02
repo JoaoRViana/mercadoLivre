@@ -7,7 +7,8 @@ import { loading, userSearch } from '../redux/actions/search';
 
 const { useState } = require('react');
 
-function InputSearch() {
+function InputSearch(props) {
+  const { theme } = props;
   const [inputs, setValues] = useState({
     inputSearch: '',
   });
@@ -32,12 +33,11 @@ function InputSearch() {
     }
     navigate('/');
   };
-
   return (
     <div>
       <input
         placeholder="Buscar produtos, marcas e muito mais..."
-        className="bg-gray-200 w-96 text-center text-black rounded-md"
+        className={ theme.inputSearch }
         onChange={ handleChange }
         value={ inputs.inputSearch }
       />

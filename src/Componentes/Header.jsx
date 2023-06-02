@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getCategories, getSearchCategories } from '../Service';
 import InputSearch from './InputSearch';
-import { listingCategories } from '../redux/actions/server';
+import { changeTheme, listingCategories } from '../redux/actions/server';
 import { loading, userSearch } from '../redux/actions/search';
+import CartProducts from './CartProducts';
 
 class Header extends Component {
   componentDidMount() {
@@ -15,10 +16,10 @@ class Header extends Component {
   AllCategories = async () => {
     const { dispatch, search } = this.props;
     const categories = await getCategories();
+    await dispatch(listingCategories(categories));
     if (search.valueSearch.length < 1) {
       await this.randomSearch();
     }
-    dispatch(listingCategories(categories));
   };
 
   randomSearch = async () => {
@@ -30,6 +31,12 @@ class Header extends Component {
       const data = await getSearchCategories(id);
       dispatch(userSearch(data));
     }
+  };
+
+  changeMode = () => {
+    const { dispatch, server } = this.props;
+    const currentTheme = server.theme;
+    dispatch(changeTheme(currentTheme));
   };
 
   render() {
@@ -49,10 +56,14 @@ class Header extends Component {
               Mercado Livre
             </button>
           </Link>
-          <InputSearch />
+          <InputSearch theme={ server[server.theme] } />
           <Link to="/checkout">
-            {server.quantity}
+            <div className="cartInfos">
+              {server.quantity}
+              <CartProducts />
+            </div>
           </Link>
+          <button onClick={ this.changeMode }>{server.theme}</button>
         </div>
       </div>
     );

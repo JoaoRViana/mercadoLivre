@@ -22,6 +22,15 @@
   transform-origin: top center;
 
 }
+
+.cartList {
+  display: none;
+}
+
+.cartInfos:hover .cartList{
+  display: block;
+}
+
 @keyframes growDown {
   0% {
       transform: scaleY(0)

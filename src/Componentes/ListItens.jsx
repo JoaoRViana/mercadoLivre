@@ -24,7 +24,6 @@ class ListItens extends Component {
                   alt={ e.title }
                   className={ e.notFound ? e.notFound : 'w-40' }
                 />
-
                 <h2
                   className="
               bg-slate-300 "
