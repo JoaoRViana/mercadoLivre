@@ -33,17 +33,23 @@ function InputSearch(props) {
     }
     navigate('/');
   };
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      handleClick();
+    }
+  };
   return (
     <div>
       <input
-        placeholder="Buscar produtos, marcas e muito mais..."
-        className={ theme.inputSearch }
+        placeholder="Buscar produtos..."
+        className={ `${theme.inputSearch} mx-2` }
         onChange={ handleChange }
         value={ inputs.inputSearch }
+        onKeyPress={ handleKeyPress }
       />
       <button
+        className={ `${theme.buttonSearch} px-1 rounded-md` }
         onClick={ handleClick }
-        className="px-1 bg-slate-950 mx-2 rounded-md"
       >
         Buscar
       </button>

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 class ListItens extends Component {
   render() {
-    const { search } = this.props;
+    const { search, server, server: { theme } } = this.props;
     return (
       <div>
         <div className="flex justify-around flex-wrap">
@@ -15,22 +15,19 @@ class ListItens extends Component {
               key={ i }
             >
               <div
-                className="w-96 text-center h-60 flex
+                className={ `w-96 text-center h-72 flex
               flex-wrap justify-center items-center p-1
-              bg-slate-300 my-12 itemContainer"
+              ${server[theme].cards} my-12 itemContainer` }
               >
                 <img
                   src={ e.thumbnail }
                   alt={ e.title }
-                  className={ e.notFound ? e.notFound : 'w-40' }
+                  className={ e.notFound ? e.notFound : 'w-44' }
                 />
-                <h2
-                  className="
-              bg-slate-300 "
-                >
+                <h2 className="w-full">
                   {e.title}
                 </h2>
-                <h2 className="itemTitle w-full">
+                <h2 className="itemTitle w-full ">
                   R$
                   {(+e.price).toFixed(2)}
                 </h2>
@@ -45,6 +42,7 @@ class ListItens extends Component {
 
 const mapStateToProps = (state) => ({
   search: state.search,
+  server: state.server,
 });
 
 export default connect(mapStateToProps)(ListItens);

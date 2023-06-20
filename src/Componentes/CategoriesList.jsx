@@ -14,15 +14,15 @@ class CategoriesList extends Component {
   };
 
   render() {
-    const { server } = this.props;
+    const { server, server: { theme } } = this.props;
     return (
-      <div className="categorieList bg-gray-300 w-72 text-center">
+      <div className={ `${server[theme].cards} categorieList  w-72 text-center` }>
         Categorias
         <ul>
           {server.categoriesList.map((e, i) => (
             <li
               key={ `${e.name} ${i}` }
-              className="text-center py-1 bg-gray-300 w-72"
+              className={ `${server[theme].cards} categorieList  w-72 text-center py-1` }
             >
               <button
                 onClick={ this.handleClick }

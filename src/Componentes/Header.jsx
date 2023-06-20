@@ -40,12 +40,12 @@ class Header extends Component {
   };
 
   render() {
-    const { server } = this.props;
+    const { server, server: { theme } } = this.props;
     return (
       <div>
         <div
-          className="bg-slate-600 text-green-300 flex-wrap
-        justify-around flex h-20 items-center"
+          className={ `${server[theme].header} flex-wrap
+        justify-around flex h-20 items-center` }
         >
           <Link to="/">
             <button
@@ -58,12 +58,19 @@ class Header extends Component {
           </Link>
           <InputSearch theme={ server[server.theme] } />
           <Link to="/checkout">
-            <div className="cartInfos">
+            <div
+              className={ `${server[theme].cartProducts}
+            cartInfos  rounded-lg bg-slate-400 w-8 text-center` }
+            >
               {server.quantity}
               <CartProducts />
             </div>
           </Link>
-          <button onClick={ this.changeMode }>{server.theme}</button>
+          <button
+            onClick={ this.changeMode }
+          >
+            <h1>{server.theme === 'light' ? '🌙' : '☀️'}</h1>
+          </button>
         </div>
       </div>
     );

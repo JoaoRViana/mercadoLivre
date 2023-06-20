@@ -8,12 +8,12 @@ import CategoriesList from '../Componentes/CategoriesList';
 
 class Home extends Component {
   render() {
-    const { search } = this.props;
+    const { search, server, server: { theme } } = this.props;
     return (
       <div>
         <Header />
         <CategoriesList />
-        {search.loading ? <Loading /> : <ListItens />}
+        {search.loading ? <Loading theme={ server[theme].cards } /> : <ListItens />}
       </div>
     );
   }
@@ -21,6 +21,7 @@ class Home extends Component {
 
 const mapStateToProps = (state) => ({
   search: state.search,
+  server: state.server,
 });
 
 export default connect(mapStateToProps)(Home);

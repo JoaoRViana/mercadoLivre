@@ -25,7 +25,7 @@ class ItemDetails extends Component {
   render() {
     const { item } = this.state;
     return (
-      <div>
+      <div className="flex items-center justify-center">
         {item
           ? <RenderItem item={ item } />
           : ''}

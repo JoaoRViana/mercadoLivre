@@ -4,13 +4,21 @@ import { connect } from 'react-redux';
 
 class CartProducts extends Component {
   render() {
-    const { server } = this.props;
+    const { server, server: { theme } } = this.props;
+    console.log(server.cartItens);
     return (
-      <div className="cartList">
+      <div className={ `cartList ${server[theme].cartProducts} p-1 rounded` }>
         {server.cartItens.map((e) => (
-          <div key={ `cart ${e.id}` }>
-            <h3>{e.title}</h3>
-            <img src={ e.thumbnail } alt={ e.title } />
+          <div key={ `cart ${e.id}` } className="flex items-center">
+            <div>
+              <h3 className="text-xs my-2">{e.title}</h3>
+              <h3 className="text-xs">
+                Quantidade:
+                {e.quantity}
+              </h3>
+            </div>
+            <img src={ e.thumbnail } alt={ e.title } className="w-20 my-3" />
+
           </div>
         ))}
       </div>

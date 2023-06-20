@@ -1,8 +1,10 @@
+/* eslint-disable react/prop-types */
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Header from '../Componentes/Header';
 import FullCart from '../Componentes/FullCart';
 
-export default class Checkout extends Component {
+class Checkout extends Component {
   render() {
     return (
       <div>
@@ -12,3 +14,9 @@ export default class Checkout extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => ({
+  server: state.server,
+});
+
+export default connect(mapStateToProps)(Checkout);
