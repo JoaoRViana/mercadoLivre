@@ -1,6 +1,5 @@
 
 # Site de Compras utilizando a API do Mercado Livre
-# Este é o README para a aplicação do site de compras que utiliza a API do Mercado Livre. Nesta aplicação, foram utilizadas as seguintes tecnologias: React, Redux e Tailwind CSS.
 
 ## Descrição
 O site de compras é uma plataforma que permite aos usuários pesquisar, visualizar e "comprar" produtos disponíveis na API do Mercado Livre. Ele utiliza o React como biblioteca de desenvolvimento de interfaces de usuário, o Redux para gerenciar o estado global da aplicação e o Tailwind CSS para estilizar os componentes.
