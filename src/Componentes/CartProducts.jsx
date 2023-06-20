@@ -5,9 +5,10 @@ import { connect } from 'react-redux';
 class CartProducts extends Component {
   render() {
     const { server, server: { theme } } = this.props;
-    console.log(server.cartItens);
     return (
-      <div className={ `cartList ${server[theme].cartProducts} p-1 rounded` }>
+      <div
+        className={ `cartList ${server[theme].cartProducts} p-1 rounded ` }
+      >
         {server.cartItens.map((e) => (
           <div key={ `cart ${e.id}` } className="flex items-center">
             <div>

@@ -30,9 +30,12 @@
 
 .cartInfos:hover .cartList{
   display: block;
-  width: 300px;
   animation: growDown 300ms ease-in-out forwards;
   transform-origin: top center;
+}
+
+.emptyCart{
+  pointer-events: none;
 }
 
 .cartInfos:hover {

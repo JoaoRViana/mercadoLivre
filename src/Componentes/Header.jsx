@@ -41,6 +41,7 @@ class Header extends Component {
 
   render() {
     const { server, server: { theme } } = this.props;
+    const empty = server.cartItens.length === 0 ? 'emptyCart' : '';
     return (
       <div>
         <div
@@ -60,7 +61,7 @@ class Header extends Component {
           <Link to="/checkout">
             <div
               className={ `${server[theme].cartProducts}
-            cartInfos  rounded-lg bg-slate-400 w-8 text-center` }
+            cartInfos  rounded-lg bg-slate-400 w-8 text-center ${empty}` }
             >
               {server.quantity}
               <CartProducts />

@@ -65,7 +65,7 @@ class FullCart extends Component {
           </div>
         ))}
         <div className="w-1/2 text-center flex justify-center ">
-          <h2 className={ `text-xl rounded-xl p-2 ${server[theme].cards} mb-3` }>
+          <h2 className={ `text-xl rounded-xl p-2 ${server[theme].cards} m-3` }>
             Total
             {' '}
             R$
