@@ -19,10 +19,13 @@ Siga as etapas abaixo para configurar e executar a aplicação localmente:
 Certifique-se de ter o Node.js instalado na sua máquina.
 
 Clone o repositório do projeto:
+
 git clone https://github.com/JoaoRViana/mercadoLivre.git
+
 Acesse o diretório do projeto:
 
 cd mercadoLivre
+
 Instale as dependências do projeto:
 
 npm install
