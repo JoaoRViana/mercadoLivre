@@ -25,6 +25,10 @@ function InputSearch(props) {
 
   const handleClick = async () => {
     dispatch(loading());
+    setValues({
+      ...inputs,
+      inputSearch: '',
+    });
     const data = await getSearch(inputs.inputSearch);
     if (data.length === 0) {
       dispatch(userSearch([itemNotFound]));
