@@ -1,70 +1,35 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Site de Compras utilizando a API do Mercado Livre
+# Este é o README para a aplicação do site de compras que utiliza a API do Mercado Livre. Nesta aplicação, foram utilizadas as seguintes tecnologias: React, Redux e Tailwind CSS.
 
-## Available Scripts
+## Descrição
+O site de compras é uma plataforma que permite aos usuários pesquisar, visualizar e "comprar" produtos disponíveis na API do Mercado Livre. Ele utiliza o React como biblioteca de desenvolvimento de interfaces de usuário, o Redux para gerenciar o estado global da aplicação e o Tailwind CSS para estilizar os componentes.
 
-In the project directory, you can run:
+## Funcionalidades
+Pesquisar produtos: Os usuários podem pesquisar produtos na barra de pesquisa do site. A pesquisa será enviada para a API do Mercado Livre, que retornará os resultados correspondentes.
 
-### `npm start`
+Visualizar detalhes do produto: Ao clicar em um produto na lista de resultados da pesquisa, os usuários poderão ver informações detalhadas sobre o produto, como título, descrição, preço e imagens.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Adicionar ao carrinho: Os usuários têm a opção de adicionar produtos ao carrinho de compras. O carrinho de compras será gerenciado pelo estado global do Redux.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Light/Dark mode: Os usuários podem alterar o tema do site. O tema é gerenciado pelo estado global do redux.
 
-### `npm test`
+## Configuração
+Siga as etapas abaixo para configurar e executar a aplicação localmente:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Certifique-se de ter o Node.js instalado na sua máquina.
 
-### `npm run build`
+Clone o repositório do projeto:
+git clone https://github.com/JoaoRViana/mercadoLivre.git
+Acesse o diretório do projeto:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+cd mercadoLivre
+Instale as dependências do projeto:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+npm install
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Inicie o servidor de desenvolvimento:
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+npm start
+Abra seu navegador e acesse a seguinte URL:
+http://localhost:3000
