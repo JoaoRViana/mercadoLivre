@@ -33,5 +33,7 @@ npm install
 Inicie o servidor de desenvolvimento:
 
 npm start
+
 Abra seu navegador e acesse a seguinte URL:
+
 http://localhost:3000
