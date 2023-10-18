@@ -4,6 +4,8 @@
 ## Descrição
 O site de compras é uma plataforma que permite aos usuários pesquisar, visualizar e "comprar" produtos disponíveis na API do Mercado Livre. Ele utiliza o React como biblioteca de desenvolvimento de interfaces de usuário, o Redux para gerenciar o estado global da aplicação e o Tailwind CSS para estilizar os componentes.
 
+<img src='./public/mercadoLivreGif.gif'>
+
 ## Funcionalidades
 Pesquisar produtos: Os usuários podem pesquisar produtos na barra de pesquisa do site. A pesquisa será enviada para a API do Mercado Livre, que retornará os resultados correspondentes.
 
