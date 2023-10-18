@@ -22,7 +22,7 @@ Certifique-se de ter o Node.js instalado na sua máquina.
 
 Clone o repositório do projeto:
 
-git clone https://github.com/JoaoRViana/mercadoLivre.git
+git clone https://github.com/JoaoRViana/shoppingCart.git
 
 Acesse o diretório do projeto:
 
